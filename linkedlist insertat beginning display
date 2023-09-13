@@ -1,0 +1,47 @@
+import java.util.*;
+class practise{
+    //creating a node
+    class node{
+        int data;
+        node next;
+        //constructor
+        node(int val){
+            data=val;
+            next=null;
+        }
+    }
+    //constructor
+    node head;
+    practise(){
+        head=null;
+    }
+    void insertatbeginning(int val){
+        node newnode=new node(val);
+        if(head==null){
+            newnode.next=null;
+            head=newnode;
+        }
+        else{
+            newnode.next=head;
+            head=newnode;
+        }
+    }
+    void display(){
+        node temp=head;
+        while(temp!=null){
+            System.out.print(temp.data+" ");
+            temp=temp.next;
+        }
+
+    }
+
+    public static void main(String args[]){
+        practise list=new practise();
+        list.insertatbeginning(2);
+        list.insertatbeginning(12);
+        list.insertatbeginning(72);
+        list.insertatbeginning(12);
+        System.out.println("output");
+        list.display();
+    }
+}
